@@ -63,6 +63,15 @@ public class MyController extends HttpServlet {
            request.setAttribute("count", count);
            url="/deleteSportCarOut.jsp";
        }
+        //Phase 5: Code for "findAllMatch" opr
+            else if(opr.equals("findAllMatch")) {
+              int model = Integer.parseInt(request.getParameter("model"));
+             ArrayList<Cars> cAL = BussinessSportCar.findAllMatching(model);
+             request.setAttribute("model", model);
+               request.setAttribute("cAL", cAL);
+             url="/findSportCarOut.jsp";
+               
+           }
                
    
     
