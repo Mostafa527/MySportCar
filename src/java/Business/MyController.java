@@ -53,6 +53,16 @@ public class MyController extends HttpServlet {
            request.setAttribute("color", Color);
            url="/eraseAllDataOut.jsp";
        }
+          //Phase 4: Code for "deleteAllMatch" opr
+        else if(opr.equals("deleteAllMatch")){
+           int model = Integer.parseInt(request.getParameter("model"));
+           int count = BussinessSportCar.deleteAllMatching(model);
+           
+        
+           request.setAttribute("model", model);
+           request.setAttribute("count", count);
+           url="/deleteSportCarOut.jsp";
+       }
                
    
     
