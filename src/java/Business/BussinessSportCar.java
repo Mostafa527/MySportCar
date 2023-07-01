@@ -54,5 +54,19 @@ public class BussinessSportCar {
             System.out.println(e.toString());
         }
     }
+               //Phase 4: Create "deleteAllMatching()" method
+     public static int deleteAllMatching(int model){
+        Cars[] cc = getSportCar();
+        int count = 0;
+        for(int i=0;i< cc.length; i++){
+            if(cc[i].getModel()==model){
+                cc[i] = null;
+                count++;
+            }
+        }
+        saveSportCar(cc);
+        return count;
+     
+    }
 
 }
