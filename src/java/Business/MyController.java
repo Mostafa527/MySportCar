@@ -39,6 +39,20 @@ public class MyController extends HttpServlet {
            request.setAttribute("c", c);
            url="/addSportCarOut.jsp";
        }
+           //Phase 3: Code for "list" opr
+       else if(opr.equals("list")){
+           Cars [] car = BussinessSportCar.getSportCar();
+           request.setAttribute("cc",car);
+           url="/listOut.jsp";
+       }
+        //Phase 3: Code for "erase" opr
+    
+       else if(opr.equals("er")){
+           String Color = request.getParameter("color");
+           BussinessSportCar.eraseAllData();
+           request.setAttribute("color", Color);
+           url="/eraseAllDataOut.jsp";
+       }
                
    
     
