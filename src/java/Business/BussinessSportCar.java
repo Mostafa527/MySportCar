@@ -68,5 +68,21 @@ public class BussinessSportCar {
         return count;
      
     }
+              //Phase 4: Create "saveSportCar()" method
+     public static void saveSportCar(Cars[] cc){
+     String out = MyController.path+"/WEB-inf/sportcar.txt";
+        try(FileWriter fw =new FileWriter(out);){
+            PrintWriter pw = new PrintWriter(fw);
+            
+          for(int i=0;i< cc.length; i++){
+            if(cc[i] != null){
+                pw.println(cc[i]);
+            }
+        }
+        }catch(Exception e){
+            System.out.println(e.toString());
+        }
+     
+    }
 
 }
