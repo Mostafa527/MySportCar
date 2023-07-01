@@ -84,5 +84,17 @@ public class BussinessSportCar {
         }
      
     }
+       //Phase 5: Create "findAllMatching()" method
+          public static ArrayList<Cars> findAllMatching(int model){
+    
+        Cars[] cc=getSportCar();
+        ArrayList<Cars> cAL = new ArrayList<Cars>();
+        for(int i=0;i<cc.length;i++){
+            if(cc[i].getModel()==model){
+                cAL.add(cc[i]);
+            }
+        }
+        return cAL;
+    }
 
 }
